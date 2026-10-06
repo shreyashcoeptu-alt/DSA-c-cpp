@@ -1,4 +1,5 @@
-# DSA-c
+# DSA-c and cpp
+
 Data Structures and Algorithms Practise/Notes repo to help out for study/revision
 
 Data structures to be done :
