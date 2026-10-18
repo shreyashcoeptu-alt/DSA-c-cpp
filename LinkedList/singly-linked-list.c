@@ -42,6 +42,7 @@ int main(){
     insertAtEnd(10);
     insertAtEnd(20);
     insertAtEnd(30);
+    insertAtEnd(60);
 
     displayNodes(head);
 
