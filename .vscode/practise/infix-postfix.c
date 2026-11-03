@@ -26,47 +26,152 @@ int precedence(char c) {
     return 0;
 }
 
-void infixToPostfix(char infix[], char postfix[]) {
-    int k = 0;
-    for (int i = 0; infix[i] != '\0'; i++) {
-        char ch = infix[i];
+void infixtopostfix(char infix[], char postfix[]){
 
-        // 1. Operand -> direct to output
-        if (isalnum(ch)) {
-            postfix[k++] = ch;
+    int k = 0;
+    for(int i = 0; infix[i] != '0\n' ; i++){
+        char ch = infix[i];
+        if (isalnum(ch)){
+            opStack[k++] = ch;
         }
-        // 2. Opening bracket -> push to stack
-        else if (ch == '(') {
-            pushChar(ch);
-        }
-        // 3. Closing bracket -> pop until '('
-        else if (ch == ')') {
-            while (opTop != -1 && peekChar() != '(') {
-                postfix[k++] = popChar();
+
+        else if {
+            if(ch == '('){
+                pushChar(ch);
             }
-            popChar(); // Remove '('
+        } else if{
+
+            if(ch == ")"){
+                while(opTop != -1 && peekChar() != '('){
+                    postfix[k++] = popChar();
+                }
+            }
+
         }
-        // 4. Operator -> pop higher/equal precedence operators first
+
         else {
-            while (opTop != -1 && precedence(peekChar()) >= precedence(ch)) {
-                postfix[k++] = popChar();
-            }
-            pushChar(ch);
+            while (opTop)
         }
+
+        
     }
-    // Pop remaining operators
-    while (opTop != -1) {
-        postfix[k++] = popChar();
-    }
-    postfix[k] = '\0';
 }
 
-int main() {
+
+int main(){
+
     char infix[] = "((2+3)*4)-6";
     char postfix[MAX];
 
-    infixToPostfix(infix, postfix);
-    printf("Infix Expression:   %s\n", infix);
-    printf("Postfix Expression: %s\n", postfix);
-
+    infixtopostfix(infix, postfix);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// void infixToPostfix(char infix[], char postfix[]) {
+//     int k = 0;
+//     for (int i = 0; infix[i] != '\0'; i++) {
+//         char ch = infix[i];
+
+//         // 1. Operand -> direct to output
+//         if (isalnum(ch)) {
+//             postfix[k++] = ch;
+//         }
+//         // 2. Opening bracket -> push to stack
+//         else if (ch == '(') {
+//             pushChar(ch);
+//         }
+//         // 3. Closing bracket -> pop until '('
+//         else if (ch == ')') {
+//             while (opTop != -1 && peekChar() != '(') {
+//                 postfix[k++] = popChar();
+//             }
+//             popChar(); // Remove '('
+//         }
+//         // 4. Operator -> pop higher/equal precedence operators first
+//         else {
+//             while (opTop != -1 && precedence(peekChar()) >= precedence(ch)) {
+//                 postfix[k++] = popChar();
+//             }
+//             pushChar(ch);
+//         }
+//     }
+//     // Pop remaining operators
+//     while (opTop != -1) {
+//         postfix[k++] = popChar();
+//     }
+//     postfix[k] = '\0';
+// }
+
+// int main() {
+//     char infix[] = "((2+3)*4)-6";
+//     char postfix[MAX];
+
+//     infixToPostfix(infix, postfix);
+//     printf("Infix Expression:   %s\n", infix);
+//     printf("Postfix Expression: %s\n", postfix);
+
+// }
